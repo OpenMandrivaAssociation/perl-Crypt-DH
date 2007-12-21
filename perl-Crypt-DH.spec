@@ -14,6 +14,7 @@ Url:            http://search.cpan.org/dist/%{module}
 BuildRequires:  perl-devel
 BuildRequires:  perl-Crypt-Random
 BuildArch:      noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description 
 Crypt::DH is a Perl implementation of the Diffie-Hellman key exchange system.
