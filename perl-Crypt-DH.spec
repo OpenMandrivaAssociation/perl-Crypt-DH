@@ -1,20 +1,19 @@
-%define module	Crypt-DH
-%define name	perl-%{module}
-%define version 0.06
-%define release	%mkrel 3
+%define upstream_name	 Crypt-DH
+%define upstream_version 0.06
 
-Name: 		%{name}
-Version: 	%{version}
-Release:	%{release}
-Summary:        Diffie-Hellman key exchange system
-License:        GPL or Artistic
-Group:          Development/Perl
-Source0:        http://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}
-BuildRequires:  perl-devel
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Diffie-Hellman key exchange system
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-Crypt-Random
 BuildArch:      noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 Crypt::DH is a Perl implementation of the Diffie-Hellman key exchange system.
@@ -24,7 +23,7 @@ network without the two parties ever passing the actual shared secret, or
 their private keys, between them.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -45,4 +44,3 @@ rm -rf %{buildroot}
 %doc README
 %{perl_vendorlib}/Crypt
 %{_mandir}/*/*
-
