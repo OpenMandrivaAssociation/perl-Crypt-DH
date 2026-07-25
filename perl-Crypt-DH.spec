@@ -1,15 +1,15 @@
 %define upstream_name	 Crypt-DH
-%define upstream_version 0.06
+%define upstream_version 0.07
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Diffie-Hellman key exchange system
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/B/BT/BTROTT/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://github.com/wchristian/crypt-dh/tree
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/Crypt-DH-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
