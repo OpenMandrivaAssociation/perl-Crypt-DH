@@ -1,15 +1,13 @@
 %define upstream_name	 Crypt-DH
-%define upstream_version 0.07
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.07
+Release:	2
 
 Summary:	Diffie-Hellman key exchange system
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/wchristian/crypt-dh/tree
-Source0:	https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/Crypt-DH-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/Crypt-DH-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ network without the two parties ever passing the actual shared secret, or
 their private keys, between them.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -48,9 +46,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.60.0-1mdv2011.0
 + Revision: 406922
-- rebuild using %%perl_convert_version
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.06-3mdv2009.0
+- rebuild using %0.07 Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.06-3mdv2009.0
 + Revision: 256257
 - rebuild
 
